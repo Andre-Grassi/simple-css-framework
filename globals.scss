@@ -1,0 +1,129 @@
+// Sass Variables
+
+// Colors
+// Variables
+$colors: (
+  primary: #2c3e50,
+  secondary: #27ae60,
+  highlight: #e74c3c,
+  light: #ffffff,
+  medium: #808080,
+  dark: #000000,
+);
+
+@each $color, $value in $colors {
+  // Background colors
+  .bg-#{$color} {
+    background-color: $value;
+  }
+
+  // Text colors
+  .text-#{$color} {
+    color: $value;
+  }
+
+  // Border colors
+  .border-#{$color} {
+    border-color: $value;
+  }
+}
+
+// Fonts
+// Importing poppins font
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
+
+// Variables
+$font-weight: (
+  thin: 300,
+  regular: 400,
+  medium: 500,
+  semi-bold: 600,
+  bold: 700,
+);
+
+// Font weight
+@each $weight, $value in $font-weight {
+  .fw-#{$weight} {
+    font-weight: $value;
+  }
+}
+
+// Spacing
+// Variables
+$default-spacing: 0.25rem;
+
+$i: 0;
+@for $j from 0 through 10 {
+  $i: $j * $j;
+
+  .m-#{$j} {
+    margin: $i * $default-spacing;
+  }
+
+  .mx-#{$j} {
+    margin-left: $i * $default-spacing;
+    margin-right: $i * $default-spacing;
+  }
+
+  .my-#{$j} {
+    margin-top: $i * $default-spacing;
+    margin-bottom: $i * $default-spacing;
+  }
+
+  .mt-#{$j} {
+    margin-top: $i * $default-spacing;
+  }
+
+  .mb-#{$j} {
+    margin-bottom: $i * $default-spacing;
+  }
+
+  .ml-#{$j} {
+    margin-left: $i * $default-spacing;
+  }
+
+  .mr-#{$j} {
+    margin-right: $i * $default-spacing;
+  }
+
+  .p-#{$j} {
+    padding: $i * $default-spacing;
+  }
+
+  .px-#{$j} {
+    padding-left: $i * $default-spacing;
+    padding-right: $i * $default-spacing;
+  }
+
+  .py-#{$j} {
+    padding-top: $i * $default-spacing;
+    padding-bottom: $i * $default-spacing;
+  }
+
+  .pt-#{$j} {
+    padding-top: $i * $default-spacing;
+  }
+
+  .pb-#{$j} {
+    padding-bottom: $i * $default-spacing;
+  }
+
+  .pl-#{$j} {
+    padding-left: $i * $default-spacing;
+  }
+
+  .pr-#{$j} {
+    padding-right: $i * $default-spacing;
+  }
+}
+
+// Default
+* {
+  // Spacing
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  // Font
+  font-family: 'Poppins', sans-serif;
+}
